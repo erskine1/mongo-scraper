@@ -11,4 +11,4 @@ if (tableBody.text().trim() === "") {
   tableBody.append(tRow);
 }
 
-})
+});
