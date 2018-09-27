@@ -11,8 +11,8 @@ var request = require("request");
 // console.log(__dirname, "../models/Thread.js");
 var db = require("./models");
 
-// port add heroku later
-var PORT = 3000;
+// port
+var PORT = process.env.PORT || 3000;
 
 // initializing express
 var app = express();
