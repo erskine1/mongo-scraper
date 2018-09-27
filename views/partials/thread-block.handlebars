@@ -1,0 +1,43 @@
+<tr>
+  <td>
+    <a class="profile" target="_blank" href="https://www.pathofexile.com{{profile}}">
+      {{author}}
+    </a>
+  </td>
+  <td>{{title}}</td>
+  <td>{{views}}</td>
+  <td>{{replies}}</td>
+  <td>
+    <a id="external" target="_blank" href="https://www.pathofexile.com{{link}}">
+      <i class="fas fa-external-link-alt"></i>
+    </a>
+  </td>
+  <td data-id="{{_id}}">
+    <a id="note" data-toggle="collapse" href="#note-{{_id}}" role="button" aria-expanded="false" aria-controls="note-{{_id}}">
+      <i class="fas fa-comment"></i>
+    </a>
+  </td>
+</tr>
+
+<tr class="collapse" id="note-{{_id}}">
+  <td colspan="6">
+    <ul class="list-group">
+      {{#each notes}}
+        <li class="list-group-item noteDiv">
+          {{body}}
+          <a class="float-right" href="/delete/{{_id}}">
+            <i class="fas fa-times"></i>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+
+    <form action="/submit/{{_id}}" method="post">
+      <div class="form-group">
+        <label for="text-{{_id}}">Leave a comment</label>
+        <textarea class="form-control" name="body" id="text-{{_id}}" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </td>
+</tr>

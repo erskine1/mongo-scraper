@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card mx-auto w-75">
+    <div class="card-body">
+      <p class="card-text">
+        This app scrapes the Path of Exile website and grabs forum threads. Currently the app only gets threads from the Duelist class forum. These threads most often contain player-made guides on specific "builds" for the class.  
+      </p>
+    </div>
+  </div>
+  <div class="card mx-auto w-85 tableCard">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">Author</th>
+          <th scope="col">Title</th>
+          <th scope="col">Views</th>
+          <th scope="col">Replies</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        {{#each thread}}
+          {{> thread-block}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
